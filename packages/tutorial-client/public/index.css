@@ -9,3 +9,16 @@ html, body {
     width: 100vw;
     height: 100vh;
 }
+
+#debug1 {
+    font-family: monospace;
+    font-size: larger;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    border: 1px solid red;
+    width: 180px;
+    height: 220px;
+    color: white;
+    pointer-events: none;
+}
