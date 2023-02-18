@@ -12,3 +12,7 @@ node_modules
 
 # intellij
 .idea
+
+# build
+dist
+.cache
