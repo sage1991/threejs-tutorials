@@ -1551,6 +1551,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dat.gui@npm:^0":
+  version: 0.7.7
+  resolution: "@types/dat.gui@npm:0.7.7"
+  checksum: 0a20c10013c5d8595593b9d258f48c070a09601382e9cb0a4d03b98821a8373430747b31935f73434bf0c59122c43276c6763ca1e493eaeb05a9d74bf37a7b81
+  languageName: node
+  linkType: hard
+
 "@types/eslint@npm:^8":
   version: 8.21.1
   resolution: "@types/eslint@npm:8.21.1"
@@ -3240,6 +3247,13 @@ __metadata:
   dependencies:
     assert-plus: ^1.0.0
   checksum: 3634c249570f7f34e3d34f866c93f866c5b417f0dd616275decae08147dcdf8fccfaa5947380ccfb0473998ea3a8057c0b4cd90c875740ee685d0624b2983598
+  languageName: node
+  linkType: hard
+
+"dat.gui@npm:^0.7.9":
+  version: 0.7.9
+  resolution: "dat.gui@npm:0.7.9"
+  checksum: b5b70160657224eacdb8e0a8d76376e6e59adcc654db577531c7bebce854c4f774d1511df6f064e8246a88cf9a3abe489e4d647cf9e53d26a26141a1b5d31e68
   languageName: node
   linkType: hard
 
@@ -8811,7 +8825,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tutorial-client@workspace:packages/tutorial-client"
   dependencies:
+    "@types/dat.gui": ^0
     "@types/three": ^0.149.0
+    dat.gui: ^0.7.9
     three: ^0.149.0
   languageName: unknown
   linkType: soft

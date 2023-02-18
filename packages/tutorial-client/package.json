@@ -5,7 +5,9 @@
     "start": "parcel public/index.html"
   },
   "devDependencies": {
+    "@types/dat.gui": "^0",
     "@types/three": "^0.149.0",
+    "dat.gui": "^0.7.9",
     "three": "^0.149.0"
   }
 }
