@@ -2,26 +2,43 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import Stats from "three/examples/jsm/libs/stats.module"
 import { GUI } from "dat.gui"
 import {
+  AddOperation,
   AxesHelper,
   BackSide,
   BoxGeometry,
+  CubeReflectionMapping,
+  CubeTextureLoader,
   DoubleSide,
   FrontSide,
   IcosahedronGeometry,
   Mesh,
-  MeshNormalMaterial,
+  MeshBasicMaterial,
+  MixOperation,
+  MultiplyOperation,
   PerspectiveCamera,
   PlaneGeometry,
   Scene,
   SphereGeometry,
+  TextureLoader,
   TorusKnotGeometry,
   WebGLRenderer
 } from "three"
+import {
+  gridTexture,
+  pxTexture,
+  pyTexture,
+  pzTexture,
+  nxTexture,
+  nyTexture,
+  nzTexture
+} from "./images"
 
 const scene = new Scene()
 scene.add(new AxesHelper(5))
 
 const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+camera.position.x = 3
+camera.position.y = 3
 camera.position.z = 3
 
 const renderer = new WebGLRenderer()
@@ -36,13 +53,22 @@ const icosahedronGeometry = new IcosahedronGeometry(1, 0)
 const planeGeometry = new PlaneGeometry()
 const torusKnotGeometry = new TorusKnotGeometry()
 
-// const material = new MeshBasicMaterial({
-//   color: 0x00ff00,
-//   wireframe: true
-// })
-const material = new MeshNormalMaterial()
-material.transparent = true
-material.opacity = 0.25
+const material = new MeshBasicMaterial({ color: 0xffffff })
+// const material = new MeshNormalMaterial()
+
+const texture = new TextureLoader().load(gridTexture)
+material.map = texture
+const envTexture = new CubeTextureLoader().load([
+  pxTexture,
+  nxTexture,
+  pyTexture,
+  nyTexture,
+  pzTexture,
+  nzTexture
+])
+envTexture.mapping = CubeReflectionMapping
+// envTexture.mapping = CubeRefractionMapping
+material.envMap = envTexture
 
 const cube = new Mesh(boxGeometry, material)
 cube.position.x = 5
@@ -80,6 +106,11 @@ const options = {
     FrontSide,
     BackSide,
     DoubleSide
+  },
+  combine: {
+    MultiplyOperation,
+    MixOperation,
+    AddOperation
   }
 }
 
@@ -98,9 +129,35 @@ materialFolder.add(material, "side", options.side).onChange((value) => {
 })
 materialFolder.open()
 
+const data = {
+  color: material.color.getHex()
+}
+
+const meshBasicMaterialFolder = gui.addFolder("MeshBasicMaterial")
+meshBasicMaterialFolder.addColor(data, "color").onChange(() => {
+  // #00ff00 -> 0x00ff00
+  material.color.setHex(Number(data.color.toString().replace("#", "0x")))
+})
+meshBasicMaterialFolder.add(material, "wireframe")
+// meshBasicMaterialFolder.add(material, 'wireframeLinewidth', 0, 10) @deprecated
+meshBasicMaterialFolder.add(material, "combine", options.combine).onChange(() => {
+  updateMaterial()
+})
+meshBasicMaterialFolder.add(material, "reflectivity", 0, 1)
+meshBasicMaterialFolder.add(material, "refractionRatio", 0, 1) // CubeRefractionMapping
+meshBasicMaterialFolder.open()
+
+// const meshNormalMaterialFolder = gui.addFolder("MeshNormalMaterial")
+// meshNormalMaterialFolder.add(material, "wireframe")
+// meshNormalMaterialFolder.add(material, "flatShading").onChange(() => {
+//   updateMaterial()
+// })
+// meshNormalMaterialFolder.open()
+
 function updateMaterial() {
   // dat.GUI 의 옵션은 string 으로 값을 세팅 하기 때문인듯...?
   material.side = Number(material.side)
+  material.combine = Number(material.combine)
   material.needsUpdate = true
 }
 
