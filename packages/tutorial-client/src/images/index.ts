@@ -32,6 +32,8 @@ export { default as FiveToneTexture } from "./fiveTone.jpg"
 export { default as EarthSpecularTexture } from "./earthSpecular.jpg"
 export { default as GrayScaleSpecularTexture } from "./grayscale-test.png"
 
-// bump texture
-export { default as EarthNormalBumpTexture } from "./earth_normalmap.jpg"
+// normal map texture
+export { default as EarthNormalMapTexture } from "./earth_normalmap.jpg"
+
+// bump map texture
 export { default as EarthBumpTexture } from "./earth_bumpmap.jpg"
