@@ -26,12 +26,12 @@ import {
 } from "three"
 import {
   GridTexture,
-  EnvNxTexture,
-  EnvNyTexture,
-  EnvNzTexture,
-  EnvPxTexture,
-  EnvPyTexture,
-  EnvPzTexture
+  MountainEnvTextureNx,
+  MountainEnvTextureNy,
+  MountainEnvTextureNz,
+  MountainEnvTexturePx,
+  MountainEnvTexturePy,
+  MountainEnvTexturePz
 } from "../images"
 
 const scene = new Scene()
@@ -62,12 +62,12 @@ const texture = new TextureLoader().load(GridTexture)
 material.map = texture
 
 const envTexture = new CubeTextureLoader().load([
-  EnvPxTexture,
-  EnvNxTexture,
-  EnvPyTexture,
-  EnvNyTexture,
-  EnvPzTexture,
-  EnvNzTexture
+  MountainEnvTexturePx,
+  MountainEnvTextureNx,
+  MountainEnvTexturePy,
+  MountainEnvTextureNy,
+  MountainEnvTexturePz,
+  MountainEnvTextureNz
 ])
 envTexture.mapping = CubeReflectionMapping
 // envTexture.mapping = CubeRefractionMapping

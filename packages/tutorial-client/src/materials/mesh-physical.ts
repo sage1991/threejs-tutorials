@@ -24,12 +24,12 @@ import {
 } from "three"
 import {
   GridTexture,
-  EnvNxTexture,
-  EnvNyTexture,
-  EnvNzTexture,
-  EnvPxTexture,
-  EnvPyTexture,
-  EnvPzTexture
+  MountainEnvTextureNx,
+  MountainEnvTextureNy,
+  MountainEnvTextureNz,
+  MountainEnvTexturePx,
+  MountainEnvTexturePy,
+  MountainEnvTexturePz
 } from "../images"
 
 const scene = new Scene()
@@ -70,7 +70,14 @@ material.map = texture
 
 const pmremGenerator = new PMREMGenerator(renderer)
 const envTexture = new CubeTextureLoader().load(
-  [EnvPxTexture, EnvNxTexture, EnvPyTexture, EnvNyTexture, EnvPzTexture, EnvNzTexture],
+  [
+    MountainEnvTexturePx,
+    MountainEnvTextureNx,
+    MountainEnvTexturePy,
+    MountainEnvTextureNy,
+    MountainEnvTexturePz,
+    MountainEnvTextureNz
+  ],
   () => {
     material.envMap = pmremGenerator.fromCubemap(envTexture).texture
     pmremGenerator.dispose()
