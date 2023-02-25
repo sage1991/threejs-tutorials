@@ -45,7 +45,7 @@ const renderer = new WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
-const controls = new OrbitControls(camera, renderer.domElement)
+new OrbitControls(camera, renderer.domElement)
 // controls.screenSpacePanning = true
 // controls.addEventListener("change", render)
 
