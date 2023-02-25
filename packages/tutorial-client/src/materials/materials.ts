@@ -24,13 +24,13 @@ import {
   WebGLRenderer
 } from "three"
 import {
-  gridTexture,
-  pxTexture,
-  pyTexture,
-  pzTexture,
-  nxTexture,
-  nyTexture,
-  nzTexture
+  GridTexture,
+  EnvPxTexture,
+  EnvPyTexture,
+  EnvPzTexture,
+  EnvNxTexture,
+  EnvNyTexture,
+  EnvNzTexture
 } from "../images"
 
 const scene = new Scene()
@@ -56,15 +56,15 @@ const torusKnotGeometry = new TorusKnotGeometry()
 const material = new MeshBasicMaterial({ color: 0xffffff })
 // const material = new MeshNormalMaterial()
 
-const texture = new TextureLoader().load(gridTexture)
+const texture = new TextureLoader().load(GridTexture)
 material.map = texture
 const envTexture = new CubeTextureLoader().load([
-  pxTexture,
-  nxTexture,
-  pyTexture,
-  nyTexture,
-  pzTexture,
-  nzTexture
+  EnvPxTexture,
+  EnvNxTexture,
+  EnvPyTexture,
+  EnvNyTexture,
+  EnvPzTexture,
+  EnvNzTexture
 ])
 envTexture.mapping = CubeReflectionMapping
 // envTexture.mapping = CubeRefractionMapping

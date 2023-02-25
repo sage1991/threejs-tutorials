@@ -22,7 +22,7 @@ import {
   TorusKnotGeometry,
   WebGLRenderer
 } from "three"
-import { gridTexture } from "../images"
+import { GridTexture } from "../images"
 
 const scene = new Scene()
 // scene.background = new Color(0xff0000)
@@ -54,7 +54,7 @@ const torusKnotGeometry = new TorusKnotGeometry()
 
 const material = new MeshLambertMaterial()
 
-const texture = new TextureLoader().load(gridTexture)
+const texture = new TextureLoader().load(GridTexture)
 material.map = texture
 // const envTexture = new CubeTextureLoader().load(["img/px_50.png", "img/nx_50.png", "img/py_50.png", "img/ny_50.png", "img/pz_50.png", "img/nz_50.png"])
 // //envTexture.mapping = CubeReflectionMapping

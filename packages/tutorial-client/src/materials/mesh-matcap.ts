@@ -20,12 +20,12 @@ import {
   WebGLRenderer
 } from "three"
 import {
-  crystalTexture,
-  goldTexture,
-  greenYellowPinkTexture,
-  gridTexture,
-  opalTexture,
-  redLightTexture
+  CrystalTexture,
+  GoldTexture,
+  GreenYellowPinkTexture,
+  GridTexture,
+  OpalTexture,
+  RedLightTexture
 } from "../images"
 
 const scene = new Scene()
@@ -53,7 +53,7 @@ const torusKnotGeometry = new TorusKnotGeometry()
 
 const material = new MeshMatcapMaterial()
 
-const texture = new TextureLoader().load(gridTexture)
+const texture = new TextureLoader().load(GridTexture)
 material.map = texture
 
 // MeshMatcap material does not have envMap
@@ -63,7 +63,7 @@ material.map = texture
 // material.envMap = envTexture
 
 // const matcapTexture = new TextureLoader().load(opalTexture)
-const matcapTexture = new TextureLoader().load(crystalTexture)
+const matcapTexture = new TextureLoader().load(CrystalTexture)
 // const matcapTexture = new TextureLoader().load(goldTexture)
 // const matcapTexture = new TextureLoader().load(redLightTexture)
 // const matcapTexture = new TextureLoader().load(greenYellowPinkTexture)

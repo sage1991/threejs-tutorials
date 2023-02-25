@@ -23,13 +23,13 @@ import {
   WebGLRenderer
 } from "three"
 import {
-  gridTexture,
-  nxTexture,
-  nyTexture,
-  nzTexture,
-  pxTexture,
-  pyTexture,
-  pzTexture
+  GridTexture,
+  EnvNxTexture,
+  EnvNyTexture,
+  EnvNzTexture,
+  EnvPxTexture,
+  EnvPyTexture,
+  EnvPzTexture
 } from "../images"
 
 const scene = new Scene()
@@ -65,12 +65,12 @@ material.color = new Color(0xffffff)
 material.ior = 1.2
 material.thickness = 10.0
 
-const texture = new TextureLoader().load(gridTexture)
+const texture = new TextureLoader().load(GridTexture)
 material.map = texture
 
 const pmremGenerator = new PMREMGenerator(renderer)
 const envTexture = new CubeTextureLoader().load(
-  [pxTexture, nxTexture, pyTexture, nyTexture, pzTexture, nzTexture],
+  [EnvPxTexture, EnvNxTexture, EnvPyTexture, EnvNyTexture, EnvPzTexture, EnvNzTexture],
   () => {
     material.envMap = pmremGenerator.fromCubemap(envTexture).texture
     pmremGenerator.dispose()

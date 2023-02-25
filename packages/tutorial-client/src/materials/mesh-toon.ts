@@ -20,7 +20,7 @@ import {
   TorusKnotGeometry,
   WebGLRenderer
 } from "three"
-import { fiveToneTexture, fourToneTexture, threeToneTexture } from "../images"
+import { FiveToneTexture, FourToneTexture, ThreeToneTexture } from "../images"
 
 const scene = new Scene()
 scene.add(new AxesHelper(5))
@@ -44,15 +44,15 @@ const icosahedronGeometry = new IcosahedronGeometry(1, 0)
 const planeGeometry = new PlaneGeometry()
 const torusKnotGeometry = new TorusKnotGeometry()
 
-const threeTone = new TextureLoader().load(threeToneTexture)
+const threeTone = new TextureLoader().load(ThreeToneTexture)
 threeTone.minFilter = NearestFilter
 threeTone.magFilter = NearestFilter
 
-const fourTone = new TextureLoader().load(fourToneTexture)
+const fourTone = new TextureLoader().load(FourToneTexture)
 fourTone.minFilter = NearestFilter
 fourTone.magFilter = NearestFilter
 
-const fiveTone = new TextureLoader().load(fiveToneTexture)
+const fiveTone = new TextureLoader().load(FiveToneTexture)
 fiveTone.minFilter = NearestFilter
 fiveTone.magFilter = NearestFilter
 

@@ -1,15 +1,21 @@
-export { default as gridTexture } from "./grid.png"
-export { default as nxTexture } from "./nx_50.png"
-export { default as nyTexture } from "./ny_50.png"
-export { default as nzTexture } from "./nz_50.png"
-export { default as pxTexture } from "./px_50.png"
-export { default as pyTexture } from "./py_50.png"
-export { default as pzTexture } from "./pz_50.png"
-export { default as crystalTexture } from "./matcap-crystal.png"
-export { default as goldTexture } from "./matcap-gold.png"
-export { default as greenYellowPinkTexture } from "./matcap-green-yellow-pink.png"
-export { default as opalTexture } from "./matcap-opal.png"
-export { default as redLightTexture } from "./matcap-red-light.png"
-export { default as threeToneTexture } from "./threeTone.jpg"
-export { default as fourToneTexture } from "./fourTone.jpg"
-export { default as fiveToneTexture } from "./fiveTone.jpg"
+export { default as GridTexture } from "./grid.png"
+
+// environment texture
+export { default as EnvNxTexture } from "./nx_50.png"
+export { default as EnvNyTexture } from "./ny_50.png"
+export { default as EnvNzTexture } from "./nz_50.png"
+export { default as EnvPxTexture } from "./px_50.png"
+export { default as EnvPyTexture } from "./py_50.png"
+export { default as EnvPzTexture } from "./pz_50.png"
+
+// matcap texture
+export { default as CrystalTexture } from "./matcap-crystal.png"
+export { default as GoldTexture } from "./matcap-gold.png"
+export { default as GreenYellowPinkTexture } from "./matcap-green-yellow-pink.png"
+export { default as OpalTexture } from "./matcap-opal.png"
+export { default as RedLightTexture } from "./matcap-red-light.png"
+
+// toon texture
+export { default as ThreeToneTexture } from "./threeTone.jpg"
+export { default as FourToneTexture } from "./fourTone.jpg"
+export { default as FiveToneTexture } from "./fiveTone.jpg"
