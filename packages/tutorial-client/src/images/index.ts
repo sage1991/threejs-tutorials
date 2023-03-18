@@ -37,3 +37,6 @@ export { default as EarthNormalMapTexture } from "./earth_normalmap.jpg"
 
 // bump map texture
 export { default as EarthBumpTexture } from "./earth_bumpmap.jpg"
+
+// displacement map texture
+export { default as EarthDisplacementTexture } from "./gebco_bathy.jpg"
