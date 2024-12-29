@@ -1,17 +1,17 @@
+import { GUI } from "dat.gui"
 import {
-  Scene,
-  PerspectiveCamera,
-  WebGLRenderer,
-  BoxGeometry,
-  MeshBasicMaterial,
-  Mesh,
-  Color,
   AxesHelper,
-  Vector3
+  BoxGeometry,
+  Color,
+  Mesh,
+  MeshBasicMaterial,
+  PerspectiveCamera,
+  Scene,
+  Vector3,
+  WebGLRenderer
 } from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import Stats from "three/examples/jsm/libs/stats.module"
-import { GUI } from "dat.gui"
 
 const scene = new Scene()
 scene.background = new Color(0xefefef)

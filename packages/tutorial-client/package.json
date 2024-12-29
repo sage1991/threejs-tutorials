@@ -1,13 +1,14 @@
 {
-  "name": "tutorial-client",
+  "name": "@threejs/client",
   "packageManager": "yarn@3.4.1",
   "scripts": {
-    "start": "parcel public/index.html"
+    "start": "parcel public/index.html",
+    "lint:fix": "eslint src --fix"
   },
   "devDependencies": {
-    "@types/dat.gui": "^0",
-    "@types/three": "^0.149.0",
+    "@types/dat.gui": "^0.7.13",
+    "@types/three": "^0.171.0",
     "dat.gui": "^0.7.9",
-    "three": "^0.149.0"
+    "three": "^0.171.0"
   }
 }

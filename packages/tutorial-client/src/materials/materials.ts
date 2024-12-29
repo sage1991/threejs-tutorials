@@ -1,5 +1,3 @@
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import Stats from "three/examples/jsm/libs/stats.module"
 import { GUI } from "dat.gui"
 import {
   AddOperation,
@@ -23,14 +21,17 @@ import {
   TorusKnotGeometry,
   WebGLRenderer
 } from "three"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import Stats from "three/examples/jsm/libs/stats.module"
+
 import {
   GridTexture,
-  MountainEnvTexturePx,
-  MountainEnvTexturePy,
-  MountainEnvTexturePz,
   MountainEnvTextureNx,
   MountainEnvTextureNy,
-  MountainEnvTextureNz
+  MountainEnvTextureNz,
+  MountainEnvTexturePx,
+  MountainEnvTexturePy,
+  MountainEnvTexturePz
 } from "../images"
 
 const scene = new Scene()
@@ -125,6 +126,7 @@ materialFolder.add(material, "alphaTest", 0, 1, 0.01).onChange(() => {
 })
 materialFolder.add(material, "visible")
 materialFolder.add(material, "side", options.side).onChange((value) => {
+  console.log(value)
   updateMaterial()
 })
 materialFolder.open()

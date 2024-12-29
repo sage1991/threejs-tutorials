@@ -1,5 +1,3 @@
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import Stats from "three/examples/jsm/libs/stats.module"
 import { GUI } from "dat.gui"
 import {
   AxesHelper,
@@ -12,6 +10,8 @@ import {
   Vector3,
   WebGLRenderer
 } from "three"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import Stats from "three/examples/jsm/libs/stats.module"
 
 const scene = new Scene()
 scene.add(new AxesHelper(5))

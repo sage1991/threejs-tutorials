@@ -1,5 +1,3 @@
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import Stats from "three/examples/jsm/libs/stats.module"
 import { GUI } from "dat.gui"
 import {
   AxesHelper,
@@ -19,13 +17,16 @@ import {
   TorusKnotGeometry,
   WebGLRenderer
 } from "three"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import Stats from "three/examples/jsm/libs/stats.module"
+
 import {
   CrystalTexture,
-  GoldTexture,
-  GreenYellowPinkTexture,
-  GridTexture,
-  OpalTexture,
-  RedLightTexture
+  // GoldTexture,
+  // GreenYellowPinkTexture,
+  GridTexture
+  // OpalTexture,
+  // RedLightTexture
 } from "../images"
 
 const scene = new Scene()

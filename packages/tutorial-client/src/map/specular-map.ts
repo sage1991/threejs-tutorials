@@ -1,5 +1,3 @@
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import Stats from "three/examples/jsm/libs/stats.module"
 import { GUI } from "dat.gui"
 import {
   AddOperation,
@@ -20,6 +18,9 @@ import {
   TextureLoader,
   WebGLRenderer
 } from "three"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import Stats from "three/examples/jsm/libs/stats.module"
+
 import {
   EarthSpecularTexture,
   MilkyWayEnvTextureNx,
