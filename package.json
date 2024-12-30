@@ -5,6 +5,7 @@
   "packageManager": "yarn@4.5.3",
   "private": true,
   "scripts": {
+    "@threejs/tutorial": "yarn workspace @threejs/tutorial",
     "@threejs/client": "yarn workspace @threejs/client"
   },
   "workspaces": {
