@@ -15,8 +15,8 @@ import {
   TextureLoader,
   WebGLRenderer
 } from "three"
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import Stats from "three/examples/jsm/libs/stats.module"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
+import Stats from "three/examples/jsm/libs/stats.module.js"
 
 import { GridTexture } from "../images"
 
@@ -96,7 +96,7 @@ function updateMagFilter() {
   texture2.needsUpdate = true
 }
 
-const stats = Stats()
+const stats = new Stats()
 document.body.appendChild(stats.dom)
 
 function animate() {

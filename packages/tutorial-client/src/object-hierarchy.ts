@@ -10,8 +10,8 @@ import {
   Vector3,
   WebGLRenderer
 } from "three"
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import Stats from "three/examples/jsm/libs/stats.module"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
+import Stats from "three/examples/jsm/libs/stats.module.js"
 
 const scene = new Scene()
 scene.add(new AxesHelper(5))
@@ -76,7 +76,7 @@ object3Folder.add(object3.rotation, "x", 0, Math.PI * 2, 0.01).name("X Rotation"
 object3Folder.add(object3.scale, "x", 0, 2, 0.01).name("X Scale")
 object3Folder.open()
 
-const stats = Stats()
+const stats = new Stats()
 document.body.appendChild(stats.dom)
 
 const debug = document.getElementById("debug1") as HTMLDivElement

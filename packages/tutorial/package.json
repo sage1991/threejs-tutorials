@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:fix": "eslint src --fix",
+    "test:type": "tsc"
   },
   "devDependencies": {
     "@types/dat.gui": "^0.7.13",

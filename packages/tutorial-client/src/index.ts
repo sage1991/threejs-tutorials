@@ -10,8 +10,8 @@ import {
   Vector3,
   WebGLRenderer
 } from "three"
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import Stats from "three/examples/jsm/libs/stats.module"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
+import Stats from "three/examples/jsm/libs/stats.module.js"
 
 const scene = new Scene()
 scene.background = new Color(0xefefef)

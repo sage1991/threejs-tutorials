@@ -3,7 +3,8 @@
   "packageManager": "yarn@3.4.1",
   "scripts": {
     "start": "parcel public/index.html",
-    "lint:fix": "eslint src --fix"
+    "lint:fix": "eslint src --fix",
+    "test:type": "tsc"
   },
   "devDependencies": {
     "@types/dat.gui": "^0.7.13",
