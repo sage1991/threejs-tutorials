@@ -1,2 +1,2 @@
 import "./style.css"
-import "./examples/scene"
+import "./examples/renderer/scissor"
